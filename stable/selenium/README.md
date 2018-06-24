@@ -60,6 +60,11 @@ The following tables lists the configurable parameters of the Selenium chart and
 | `hub.gridUnregisterIfStillDownAfer` | | `nil` |
 | `hub.seOpts` | Command line arguments to pass to hub | `nil` |
 | `hub.timeZone` | The time zone for the container | `nil` |
+| `hub.ingress.enabled` | Enables ingress for selenium hub service | `false` |
+| `hub.ingress.annotations` | Annotations for ingress | `None` |
+| `hub.ingress.path` | Path of ingress | `/` |
+| `hub.ingress.hosts` | Hostnames for ingresss | `grid.example.com` |
+| `hub.ingress.tls` | TLS configuration for ingress | `None` |
 | `chrome.enabled` | Schedule a chrome node pod | `false` |
 | `chrome.image` | The selenium node chrome image | `selenium/node-chrome` |
 | `chrome.tag` | The selenium node chrome tag | `2.53.1` |

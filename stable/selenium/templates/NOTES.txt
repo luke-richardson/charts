@@ -34,6 +34,14 @@ To watch for the LoadBalancer IP run the following
     -l app={{ template "hub.fullname" . }}
 {{- end }}
 
+{{- if .Values.hub.ingress.enabled }}
+
+Selenium Hub can be accessed on the following URLs from outside the cluster:
+
+{{- range .Values.hub.ingress.hosts }}
+  http{{ if $.Values.hub.ingress.tls }}s{{ end }}://{{ . }}{{ $.Values.hub.ingress.path }}
+{{- end }}
+
 {{- if and (not .Values.chrome.enabled) (not .Values.chromeDebug.enabled) (not .Values.firefox.enabled) (not .Values.firefoxDebug.enabled) }}
 WARNING: No nodes enabled, no browsers available via hub
 
